@@ -32,4 +32,23 @@ class AdminController extends Controller
         }
         return json_encode($arr);
     }
+
+    public function delete_category($id){
+        $data=Oex_category::find($id);
+        $data->delete();
+        return redirect()->back();
+    }
+
+    public function edit_category($id){
+        
+        return view('admin.edit_category')->with('cat',Oex_category::find($id));
+    }
+
+    public function update_category($id){
+        $data=Oex_category::find($id);
+        $data->name=request()->name;
+        $data->update();
+        $arr=['status'=>'true','msg'=>'Edit sucess','reload'=>route('exam/category')];
+        return json_encode($arr);
+    }
 }

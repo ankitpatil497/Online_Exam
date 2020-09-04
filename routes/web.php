@@ -26,3 +26,9 @@ Route::get('/admin','AdminController@index')->name('admin');
 Route::get('/admin/exam/category','AdminController@exam_category')->name('exam/category');
 
 Route::post('admin/add_new_category','AdminController@store_category')->name('admin.add.Category');
+
+Route::get('admin/delete_category/{id}','AdminController@delete_category')->name('admin.delete.category');
+
+Route::get('admin/edit_category/{id}','AdminController@edit_category')->name('admin.edit.category');
+
+Route::post('admin/update_category/{id}','AdminController@update_category')->name('admin.update.category');

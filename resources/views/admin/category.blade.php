@@ -28,7 +28,7 @@
                       <!-- Default box -->
                       <div class="card">
                         <div class="card-header">
-                          <h3 class="card-title">Title</h3>
+                          <h3 class="card-title">Category</h3>
           
                           <div class="card-tools">
                             <a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#add">Add</a>
@@ -49,8 +49,8 @@
                                         <td>{{$c->name}}</td>
                                         <td><input type="checkbox" name="status" id="status"></td>
                                         <td>
-                                            <a href="" class="btn btn-success btn-sm">Edit</a>
-                                            <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                            <a href="{{route('admin.edit.category',$c->id)}}" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="{{route('admin.delete.category',$c->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
