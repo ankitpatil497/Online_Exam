@@ -26,6 +26,10 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+
+  <link rel="stylesheet" href="{{asset('asset/plugins/select2/css/select2.min.css')}}">
+
+  <link rel="stylesheet" href="{{asset('asset/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -156,7 +160,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="{{route('admin')}}" class="brand-link">
       <span class="brand-text font-weight-light">Online Examination System</span>
     </a>
 
@@ -191,6 +195,24 @@
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     Category
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('admin.manage_exam')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Manage Exam
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('admin.manage.student')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Manage Student
                   </p>
                 </a>
               </li>

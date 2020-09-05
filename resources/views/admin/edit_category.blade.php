@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Dashboard')
+@section('title','Category')
 @section('content')
      <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -13,7 +13,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-                    <li class="breadcrumb-item active">category</li>
+                    <li class="breadcrumb-item active">edit category</li>
                     </ol>
                 </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -61,20 +61,4 @@
               </section>
         </div>
   <!-- /.content-wrapper -->
-
-  <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="ADD">Add Category</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          
-        </div>
-      </div>
-    </div>
-  </div>
 @endsection

@@ -16,7 +16,7 @@ class CreateOexExamMastersTable extends Migration
         Schema::create('oex_exam_masters', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-            $table->string('category')->nullable();
+            $table->integer('oex_category_id')->nullable();
             $table->string('exam_date')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
