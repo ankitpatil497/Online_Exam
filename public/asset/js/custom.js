@@ -8,6 +8,9 @@ $(document).on('submit','.database_operation',function(){
             alert(res.msg);
             window.location.href=res.reload;
         }
+        else{
+            alert(res.msg);
+        }
     })
     return false;
 });
@@ -31,5 +34,13 @@ $(document).on('click','.student_status',function(){
     var data=$(this).attr('data-id');
     $.get('/admin/status_student/'+data,function(res){
         alert("Status changed Successfully");
+    })
+});
+
+
+$(document).on('click','.portal_status',function(){
+    var data=$(this).attr('data-id');
+    $.get('/admin/portal_student/'+data,function(res){
+        alert("Status Changed Successfully");
     })
 });

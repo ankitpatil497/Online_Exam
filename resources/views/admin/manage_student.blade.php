@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Mange Students</h1>
+                    <h1 class="m-0 text-dark">Manage Students</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -57,7 +57,7 @@
                                         <td>N/A</td>
                                         <td><input type="checkbox" class="student_status" data-id={{$s->id}} <?php if($s->status==1){ {echo('Checked');} }?> name="status" id="status"></td>
                                         <td>
-                                            <a href="" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="{{route('admin.edit.student',$s->id)}}" class="btn btn-success btn-sm">Edit</a>
                                             <a href="{{route('admin.delete.student',$s->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>
@@ -81,7 +81,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="ADD">Add Category</h5>
+          <h5 class="modal-title" id="ADD">Add New Student</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

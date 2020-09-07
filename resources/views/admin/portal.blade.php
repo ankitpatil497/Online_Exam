@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Exam')
+@section('title','Portal')
 @section('content')
      <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -8,12 +8,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Mange Exam</h1>
+                    <h1 class="m-0 text-dark">Mange Portal</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-                    <li class="breadcrumb-item active">manage exam</li>
+                    <li class="breadcrumb-item active">Manage Portal</li>
                     </ol>
                 </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -37,24 +37,24 @@
                          <table class="table table-striped table-bordered datatable">
                              <thead>
                                  <th>#</th>
-                                 <th>Title</th>
-                                 <th>Category</th>
-                                 <th>Exam Date</th>
+                                 <th>Name</th>
+                                 <th>E-mail</th>
+                                 <th>Mobile N0</th>
                                  <th>Status</th>
                                  <th>Action</th>
                              </thead>
                              <tbody>
-                                <?php $count=1 ?>
-                                @foreach ($exam as $e)
+                                {{$count=1}}
+                                @foreach ($portal as $p)
                                     <tr>
                                         <td>{{$count++}}</td>
-                                        <td>{{$e->title}}</td>
-                                        <td>{{$e->oex_category->name}}</td>
-                                        <td>{{$e->exam_date}}</td>
-                                        <td><input type="checkbox" class="exam_status" data-id={{$e->id}} <?php if($e->status==1){ {echo('Checked');} }?> name="status" id="status"></td>
+                                        <td>{{$p->name}}</td>
+                                        <td>{{$p->email}}</td>
+                                        <td>{{$p->mobile_no}}</td>
+                                        <td><input type="checkbox" class="portal_status" data-id={{$p->id}} <?php if($p->status==1){ {echo('Checked');} }?> name="status" id="status"></td>
                                         <td>
-                                            <a href="{{route('admin.edit.exam',$e->id)}}" class="btn btn-success btn-sm">Edit</a>
-                                            <a href="{{route('admin.delete.exam',$e->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                            <a href="{{route('admin.edit.portal',$p->id)}}" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="{{route('admin.delete.portal',$p->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -77,20 +77,20 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="ADD">Add New Exam</h5>
+          <h5 class="modal-title" id="ADD">Add New Portal</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form action="{{route('admin.store.exam')}}"  class="database_operation"  >
+          <form action="{{route('admin.store.portal')}}"  class="database_operation"  >
               @csrf
               
               <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="title">Exam Title</label>
-                        <input type="text" required="required" id="title" class="form-control" name="title" placeholder="Enter the title">
+                        <label for="name">Enter Name</label>
+                        <input type="text" required="required" id="name" class="form-control" name="name" placeholder="Enter Name">
                     </div>
                 </div>                
               </div>
@@ -98,8 +98,8 @@
               <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="exam_date">Exam Date</label>
-                        <input type="date" required="required" id="exam_date" class="form-control" name="exam_date">
+                        <label for="email">Enter E-mail</label>
+                        <input type="text" required="required" id="email" class="form-control" name="email" placeholder="Enter Email">
                     </div>
                 </div>                
               </div>
@@ -107,13 +107,17 @@
               <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="category">Category</label>
-                        <select class="form-control" required name="category">
-                            <option value="">Select</option>
-                            @foreach ($cat as $c)
-                                <option value="{{$c->id}}">{{$c->name}}</option>                                
-                            @endforeach
-                          </select>
+                        <label for="mobile_no">Enter Mobile-no</label>
+                        <input type="number" required="required" id="mobile_no" class="form-control" name="mobile_no" placeholder="Enter Mobile No">
+                    </div>
+                </div>                
+              </div>
+              
+              <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="password">Enter Password</label>
+                        <input type="password" required="required" id="password" class="form-control" name="password" placeholder="Enter password">
                     </div>
                 </div>                
               </div>

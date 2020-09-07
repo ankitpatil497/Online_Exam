@@ -54,3 +54,23 @@ Route::post('admin/store/student','AdminController@store_student')->name('admin.
 Route::get('admin/delete_student/{id}','AdminController@delete_student')->name('admin.delete.student');
 
 Route::get('admin/status_student/{id}','AdminController@status_student')->name('admin.status.student');
+
+Route::get('admin/edit/student/{id}','AdminController@edit_student')->name('admin.edit.student');
+
+Route::post('admin/update_student/{id}','AdminController@update_student')->name('admin.update.student');
+
+Route::get('admin/manage_portal','AdminController@manage_portal_index')->name('admin.manage.portal');
+
+Route::post('admin/store/portal','AdminController@store_portal')->name('admin.store.portal');
+
+Route::get('admin/portal_student/{id}','AdminController@status_portal')->name('admin.status.student');
+
+Route::get('admin/delete_portal/{id}','AdminController@delete_portal')->name('admin.delete.portal');
+
+Route::get('admin/edit_portal/{id}','AdminController@edit_portal')->name('admin.edit.portal');
+
+Route::post('admin/update_portal/{id}','AdminController@update_portal')->name('admin.update.portal');
+
+
+
+
