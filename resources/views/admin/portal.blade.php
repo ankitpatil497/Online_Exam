@@ -44,7 +44,7 @@
                                  <th>Action</th>
                              </thead>
                              <tbody>
-                                {{$count=1}}
+                              <?php $count=1 ?>
                                 @foreach ($portal as $p)
                                     <tr>
                                         <td>{{$count++}}</td>

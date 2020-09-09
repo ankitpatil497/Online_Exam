@@ -71,6 +71,22 @@ Route::get('admin/edit_portal/{id}','AdminController@edit_portal')->name('admin.
 
 Route::post('admin/update_portal/{id}','AdminController@update_portal')->name('admin.update.portal');
 
+// Protal Cntroller
 
+Route::get('portal/sign_up','PoratlController@signupPortal')->name('porat.signup');
+
+Route::post('portal/signup_store','PoratlController@signUpstore_portal')->name('portal.store.signup');
+
+Route::get('portal/login','PoratlController@login_portal_view')->name('portal.login');
+
+Route::post('poratl/login_check','PoratlController@login_check_potal')->name('porat.login.check');
+
+Route::get('portal/dashborad','PoratlOpeartion@dashnorad')->name('portal.dashboard');
+
+Route::get('portal/exam_form/{id}','PoratlOpeartion@exam_form')->name('portal.exam_form');
+
+Route::post('portal/form_submit/exam','PoratlOpeartion@exam_form_submit')->name('portal.form.submit');
+
+Route::get('portal/print_form/{id}','PoratlOpeartion@form_print')->name('portal.print.form');
 
 
